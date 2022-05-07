@@ -13,7 +13,6 @@ $(function () {
     });
   });
 });
-
 //定义一个获取用户信息的函数
 function getUserInfo() {
   $.ajax({
@@ -30,9 +29,9 @@ function getUserInfo() {
 }
 //定义一个渲染用户头像的函数
 function renderAvatar(userMessage) {
-  let name = user.nickname || user.username;
+  let name = userMessage.nickname || userMessage.username;
   //   设置欢迎文本
-  $(".welcome").html("欢迎&nbsp;&nbsp" + name.substr(0, 3));
+  $(".avatar_box .welcome").html("欢迎&nbsp;&nbsp" + name.substr(0, 3));
   if (userMessage.user_pic !== null) {
     //渲染用户图片头像
     $(".layui-nav-img").prop("src", userMessage.user_pic).show();
